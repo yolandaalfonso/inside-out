@@ -1,16 +1,12 @@
 package dev.yolanda.views;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import dev.yolanda.controllers.ModelController;
-import dev.yolanda.dtos.MomentDTO;
-
 public class MomentPostView extends View{
 
-    private static ModelControllerController CONTROLLER = ModelControllerSingleton.getInstance();
+    //private static MomentControllerController CONTROLLER = ModelControllerSingleton.getInstance();
 
     public static void printStoreMenu() {
         System.out.println("Ingrese el título:");
@@ -30,8 +26,8 @@ public class MomentPostView extends View{
         System.out.println("Ingrese la descripción:");
         String description = SCANNER.next();
 
-        MomentDTO moment = new MomentDTO(momentTitle, date, description);
-        CONTROLLER.StoreMoment(moment);
+        //MomentDTO moment = new MomentDTO(momentTitle, date, description);
+        //CONTROLLER.StoreMoment(moment);
     }
 
 }
