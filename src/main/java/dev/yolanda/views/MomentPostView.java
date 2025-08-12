@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class MomentPostView extends View{
 
-    //private static MomentControllerController CONTROLLER = ModelControllerSingleton.getInstance();
+    private static MomentController CONTROLLER = ModelControllerSingleton.getInstance();
 
     public static void printStoreMenu() {
         System.out.println("Ingrese el título:");
@@ -25,6 +25,23 @@ public class MomentPostView extends View{
 
         System.out.println("Ingrese la descripción:");
         String description = SCANNER.next();
+
+        String text = """
+                Selecciona una emoción:
+                1. Alegría
+                2. Tristeza
+                3. Ira
+                4. Asco
+                5. Miedo
+                6. Ansiedad
+                7. Envidia
+                8. Vergüenza
+                9. Aburrimiento
+                10. Nostalgia
+                """;
+
+        System.out.print(text);
+        int numberEmotion = SCANNER.nextInt();
 
         //MomentDTO moment = new MomentDTO(momentTitle, date, description);
         //CONTROLLER.StoreMoment(moment);

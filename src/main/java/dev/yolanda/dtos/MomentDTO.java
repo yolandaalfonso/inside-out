@@ -1,5 +1,5 @@
 package dev.yolanda.dtos;
 
-public class MomentDTO {
+public record MomentDTO() {
     
 }

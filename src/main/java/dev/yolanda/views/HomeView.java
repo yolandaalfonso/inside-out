@@ -11,6 +11,8 @@ public class HomeView extends View{
                 3. Eliminar un momento
                 4. Filtrar los momentos
                 5. Salir
+                ----------------------
+                Seleccione una opción:
                 """;
 
         System.out.print(text);
