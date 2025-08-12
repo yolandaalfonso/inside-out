@@ -1,5 +1,9 @@
 package dev.yolanda.dtos;
 
-public record MomentDTO() {
-    
+import java.util.Date;
+
+import dev.yolanda.models.Emotion;
+
+public record MomentDTO(int id, String momentTitle, String description, Emotion emotion, Date date) {
+
 }

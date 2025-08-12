@@ -4,6 +4,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import dev.yolanda.controllers.MomentController;
+
 public class MomentPostView extends View{
 
     private static MomentController CONTROLLER = ModelControllerSingleton.getInstance();
