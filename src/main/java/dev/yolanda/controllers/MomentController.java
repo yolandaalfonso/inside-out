@@ -1,5 +1,7 @@
 package dev.yolanda.controllers;
 
+import java.util.List;
+
 import dev.yolanda.dtos.MomentDTO;
 import dev.yolanda.mappers.MomentMapper;
 import dev.yolanda.models.Moment;
@@ -17,6 +19,11 @@ public class MomentController {
     public void StoreMoment(MomentDTO momentDTO) {
         Moment momentToSave = MomentMapper.toEntity(momentDTO);
         repository.StoreMoment(momentToSave);
+    }
+
+    public List<MomentDTO> GetAllMoments() {
+        List<Moment> moments = repository.GetAllMoments();
+        return MomentMapper.toDTOList(moments);
     }
     
 }
