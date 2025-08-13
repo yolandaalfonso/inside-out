@@ -20,7 +20,7 @@ public class MomentMapper {
             entity.getMomentTitle(),
             entity.getDescription(),
             entity.getEmotion(),
-            entity.getDate(),
+            entity.getDate()
             //entity.getCreationDate(),
             //entity.getModificationDate()
         );
