@@ -1,6 +1,8 @@
 package dev.yolanda.repositories;
 
+import dev.yolanda.contracts.InterfaceDatabase;
 import dev.yolanda.db.DiaryDatabase;
+import dev.yolanda.models.Moment;
 
 public class MomentRepository {
     

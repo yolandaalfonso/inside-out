@@ -18,8 +18,17 @@ public enum Emotion {
         this.numberEmotion = numberEmotion;
     }
 
-    public int getnumberEmotion() {
+    public int getNumberEmotion() {
         return numberEmotion;
+    }
+
+    public static Emotion getEmotionByNumber(int number) {
+        for (Emotion emotion : values()) {
+            if (emotion.getNumberEmotion() == number) {
+                return emotion;
+            }
+        }
+        return null;
     }
 
 

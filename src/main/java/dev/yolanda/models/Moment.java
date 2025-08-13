@@ -1,6 +1,7 @@
 package dev.yolanda.models;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Moment {
 
@@ -10,16 +11,19 @@ public class Moment {
     private String momentTitle;
     private String description;
     private Emotion emotion;
-    private Date date;
-    private Date creationDate;
-    private Date modificationDate;
+    private LocalDate date;
+    private LocalDateTime creationDate;
+    private LocalDateTime modificationDate;
 
-    public Moment(int id, String momentTitle, String description, Emotion emotion, Date date) {
+    public Moment(int id, String momentTitle, String description, Emotion emotion, LocalDate date) {
         this.id = nextId++;
         this.momentTitle = momentTitle;
         this.description = description;
         this.emotion = emotion;
         this.date = date;
+
+        this.creationDate = LocalDateTime.now();
+        this.modificationDate = LocalDateTime.now();
     }
 
     public int getId() {
@@ -54,27 +58,27 @@ public class Moment {
         this.emotion = emotion;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
-    public Date getCreationDate() {
+    public LocalDateTime getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(Date creationDate) {
+    public void setCreationDate(LocalDateTime creationDate) {
         this.creationDate = creationDate;
     }
 
-    public Date getModificationDate() {
+    public LocalDateTime getModificationDate() {
         return modificationDate;
     }
 
-    public void setModificationDate(Date modificationDate) {
+    public void setModificationDate(LocalDateTime modificationDate) {
         this.modificationDate = modificationDate;
     }
 
