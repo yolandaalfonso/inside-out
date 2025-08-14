@@ -45,7 +45,10 @@ public class MomentController {
     public List<Moment> getMomentsByEmotion(Emotion emotion) {
         return repository.filterByEmotion(emotion);
     }
-
+    
+    public List<Moment> getMomentsByDate(int month, int year) {
+        return repository.filterByDate(month, year);
+    }
     
 
     /*public List<MomentDTO> GetAllMoments() {
