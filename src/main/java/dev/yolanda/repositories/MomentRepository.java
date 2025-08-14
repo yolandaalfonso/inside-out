@@ -1,5 +1,7 @@
 package dev.yolanda.repositories;
 
+import java.util.List;
+
 import dev.yolanda.contracts.InterfaceDatabase;
 import dev.yolanda.db.DiaryDatabase;
 import dev.yolanda.models.Moment;
@@ -14,5 +16,9 @@ public class MomentRepository {
 
     public void StoreMoment(Moment moment) {
         db.store(moment);
+    }
+
+    public List<Moment> GetAllMoments() {
+        return db.getAll();
     }
 }

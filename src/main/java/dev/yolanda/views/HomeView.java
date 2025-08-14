@@ -1,6 +1,11 @@
 package dev.yolanda.views;
 
+import dev.yolanda.controllers.MomentController;
+import dev.yolanda.singletons.MomentControllerSingleton;
+
 public class HomeView extends View{
+
+    private static MomentController CONTROLLER = MomentControllerSingleton.getInstance();
 
     public static void printMenu() {
 
@@ -20,6 +25,8 @@ public class HomeView extends View{
         int option = SCANNER.nextInt();
 
         if (option == 1) MomentPostView.printStoreMenu();
+        if (option == 2) CONTROLLER.GetAllMoments();
+
 
 
     }

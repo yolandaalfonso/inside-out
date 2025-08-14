@@ -18,5 +18,10 @@ public class DiaryDatabase implements InterfaceDatabase{
     public void store(Moment moment){
         moments.add(moment);
     }
+
+    @Override
+    public List<Moment> getAll() {
+        return moments;
+    }
     
 }
