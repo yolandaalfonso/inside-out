@@ -4,6 +4,7 @@ import java.util.List;
 
 import dev.yolanda.contracts.InterfaceDatabase;
 import dev.yolanda.db.DiaryDatabase;
+import dev.yolanda.models.Emotion;
 import dev.yolanda.models.Moment;
 
 public class MomentRepository {
@@ -24,5 +25,9 @@ public class MomentRepository {
 
     public void deleteMoment(int id) {
         db.deleteMoment(id);
+    }
+
+    public List<Moment> filterByEmotion(Emotion emotion) {
+        return db.filterByEmotion(emotion);
     }
 }

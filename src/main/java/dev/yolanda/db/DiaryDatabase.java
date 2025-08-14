@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dev.yolanda.contracts.InterfaceDatabase;
+import dev.yolanda.models.Emotion;
+import dev.yolanda.models.Emotion;
 import dev.yolanda.models.Moment;
 
 public class DiaryDatabase implements InterfaceDatabase{
@@ -31,6 +33,17 @@ public class DiaryDatabase implements InterfaceDatabase{
                 moments.remove(i);
             }
         }
+    }
+
+    @Override
+    public List<Moment> filterByEmotion(Emotion emotion) {
+        List<Moment> filtered = new ArrayList<>();
+        for (Moment m : moments) {
+            if (m.getEmotion() == emotion) {
+                filtered.add(m);
+            }
+        }
+        return filtered;
     }
     
 }

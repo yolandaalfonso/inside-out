@@ -2,10 +2,12 @@ package dev.yolanda.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import dev.yolanda.dtos.MomentDTO;
 import dev.yolanda.dtos.MomentDTOResponse;
 import dev.yolanda.mappers.MomentMapper;
+import dev.yolanda.models.Emotion;
 import dev.yolanda.models.Moment;
 import dev.yolanda.repositories.MomentRepository;
 import dev.yolanda.singletons.MomentRepositorySingleton;
@@ -38,6 +40,10 @@ public class MomentController {
     public void deleteMoment(int id) {
         //Moment momentToDelete = MomentMapper.toEntity(momentDTO);
         repository.deleteMoment(id);
+    }
+
+    public List<Moment> getMomentsByEmotion(Emotion emotion) {
+        return repository.filterByEmotion(emotion);
     }
 
     
