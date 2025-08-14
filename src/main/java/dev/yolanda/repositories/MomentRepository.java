@@ -21,4 +21,8 @@ public class MomentRepository {
     public List<Moment> GetAllMoments() {
         return db.getAll();
     }
+
+    public void deleteMoment(int id) {
+        db.deleteMoment(id);
+    }
 }

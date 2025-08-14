@@ -26,5 +26,7 @@ public class MomentView extends View{
         for (MomentDTOResponse moment : moments) {
             System.out.println(moment.id() + ". Ocurrió el: " + moment.date() + ". Título:" + moment.momentTitle() + ". Descripción: " + moment.description() + ". Emocion:" + moment.emotion());
         }
+
+        HomeView.printMenu();
     }
 }
