@@ -30,4 +30,8 @@ public class MomentRepository {
     public List<Moment> filterByEmotion(Emotion emotion) {
         return db.filterByEmotion(emotion);
     }
+
+    public List<Moment> filterByDate(int month, int year) {
+        return db.filterByDate(month, year);
+    }
 }
