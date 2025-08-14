@@ -23,5 +23,14 @@ public class DiaryDatabase implements InterfaceDatabase{
     public List<Moment> getAll() {
         return moments;
     }
+
+    @Override
+    public boolean deleteMoment(int id){
+        if(id >=0 && id < moments.size()) {
+            moments.remove(id);
+            return true;
+        }
+        return false;
+    }
     
 }
