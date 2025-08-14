@@ -27,6 +27,7 @@ public class HomeView extends View{
         if (option == 1) MomentPostView.printStoreMenu();
         if (option == 2) CONTROLLER.GetAllMoments();
         if (option == 3) MomentDeleteView.printDeleteMenu();
+        if (option == 4) MomentFilterView.printFilterMenu();
 
 
 

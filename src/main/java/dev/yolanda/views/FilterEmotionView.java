@@ -12,7 +12,7 @@ public class FilterEmotionView extends View{
 
     private static final MomentController CONTROLLER = MomentControllerSingleton.getInstance();
 
-    public List<Moment> filterByEmotion() {
+    public static List<Moment> filterByEmotion() {
         System.out.print("Seleccione una emoción: ");
         //¿Imprimir las emociones?
         
@@ -42,11 +42,18 @@ public class FilterEmotionView extends View{
         if (filteredMoments.isEmpty()) {
             System.out.println("No hay momentos con esa emoción.");
         } else {
-            System.out.println("Momentos encontrados:");
+            System.out.println("Lista de momentos vividos:");
             for (Moment m : filteredMoments) {
-                System.out.println("- " + m.getMomentTitle() + ": " + m.getDescription());
+                System.out.println(m.getId() + ". Ocurrió el: " + m.getDate() + ". Título:" + m.getMomentTitle() + ". Descripción: " + m.getDescription() + ". Emocion:" + m.getEmotion());
+                //System.out.println("- " + m.getMomentTitle() + ": " + m.getDescription());
             }
         }
+
+        /*if (filteredMoments.isEmpty()) {
+            System.out.println("No hay momentos con esa emoción.");
+        } else {
+            filteredMoments = CONTROLLER.GetAllMoments();
+        } */
         
         return filteredMoments;
         
