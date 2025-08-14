@@ -14,7 +14,7 @@ public enum Emotion {
 
     private int numberEmotion;
 
-    private Emotion (int numberEmotion) {
+    Emotion (int numberEmotion) {
         this.numberEmotion = numberEmotion;
     }
 
@@ -22,14 +22,14 @@ public enum Emotion {
         return numberEmotion;
     }
 
-    public static Emotion getEmotionByNumber(int number) {
+    /*public static Emotion getEmotionByNumber(int number) {
         for (Emotion emotion : values()) {
             if (emotion.getNumberEmotion() == number) {
                 return emotion;
             }
         }
         return null;
-    }
+    }*/
 
 
 }

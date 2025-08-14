@@ -5,6 +5,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
 import dev.yolanda.controllers.MomentController;
+import dev.yolanda.dtos.MomentDTO;
 import dev.yolanda.models.Emotion;
 import dev.yolanda.singletons.MomentControllerSingleton;
 
@@ -77,10 +78,14 @@ public class MomentPostView extends View{
         int numberEmotion = SCANNER.nextInt();
         SCANNER.nextLine();
 
-        Emotion emotion = Emotion.getEmotionByNumber(numberEmotion);
-        //Moment newMoment = new Moment(momentTitle, description, emotion, date);
+        Emotion emotion = Emotion.values()[numberEmotion - 1];
 
+        MomentDTO moment = new MomentDTO(1, momentTitle, description, emotion, date);
+        CONTROLLER.StoreMoment(moment);
 
+        System.out.println("Momento añadido con éxito.");
+        HomeView.printMenu();
+        
         //System.out.println("--- Lista de momentos vividos ---");
         //System.out.printf("%d. Ocurrió el: %s. Título: %s. Descripción: %s. Emoción: %s%n",
                           //newMoment.getId(),

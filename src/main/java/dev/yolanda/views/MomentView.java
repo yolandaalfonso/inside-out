@@ -24,7 +24,7 @@ public class MomentView extends View{
     public static void showAllMoments(List<MomentDTOResponse> moments) {
         System.out.println("Lista de momentos vividos:");
         for (MomentDTOResponse moment : moments) {
-            System.out.println(moment.id() + "Ocurrió el: " + moment.date() + ". Título:" + moment.momentTitle() + ". Descripción: " + moment.description() + ". Emocion:" + moment.emotion());
+            System.out.println(moment.id() + ". Ocurrió el: " + moment.date() + ". Título:" + moment.momentTitle() + ". Descripción: " + moment.description() + ". Emocion:" + moment.emotion());
         }
     }
 }

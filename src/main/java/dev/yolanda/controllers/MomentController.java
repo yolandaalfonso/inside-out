@@ -35,6 +35,8 @@ public class MomentController {
         MomentView.showAllMoments(momentsDTO);
     }
 
+    
+
     /*public List<MomentDTO> GetAllMoments() {
         List<Moment> moments = repository.GetAllMoments();
         return MomentMapper.toDTOList(moments);
