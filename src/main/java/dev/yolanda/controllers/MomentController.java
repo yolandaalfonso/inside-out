@@ -35,6 +35,11 @@ public class MomentController {
         MomentView.showAllMoments(momentsDTO);
     }
 
+    public void deleteMoment(int id) {
+        //Moment momentToDelete = MomentMapper.toEntity(momentDTO);
+        repository.deleteMoment(id);
+    }
+
     
 
     /*public List<MomentDTO> GetAllMoments() {
