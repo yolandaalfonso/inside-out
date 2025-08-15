@@ -72,7 +72,7 @@ public class HomeViewTests {
 
             HomeView.printMenu();
 
-            String output = outputCaptor.toString();
+            String output = outputStreamCaptor.toString();
             assertThat(output, containsString("Ingrese el título:"));
             assertThat(output, containsString("Ingresa la fecha (dd/mm/year):"));
             assertThat(output, containsString("Ingrese la descripción:"));
