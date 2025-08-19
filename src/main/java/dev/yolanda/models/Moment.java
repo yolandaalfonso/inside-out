@@ -14,13 +14,15 @@ public class Moment {
     private LocalDate date;
     private LocalDateTime creationDate;
     private LocalDateTime modificationDate;
+    private Mood mood;
 
-    public Moment(int id, String momentTitle, String description, Emotion emotion, LocalDate date) {
+    public Moment(int id, String momentTitle, String description, Emotion emotion, LocalDate date, Mood mood) {
         this.id = nextId++;
         this.momentTitle = momentTitle;
         this.description = description;
         this.emotion = emotion;
         this.date = date;
+        this.mood = mood;
 
         this.creationDate = LocalDateTime.now();
         this.modificationDate = LocalDateTime.now();

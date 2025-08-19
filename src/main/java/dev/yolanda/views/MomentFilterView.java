@@ -9,6 +9,7 @@ public class MomentFilterView extends View{
                 Filtrar por...
                 1.Emoción
                 2.Fecha
+                3.Mood
                 Ingresa una opcion:
                 """;
         
