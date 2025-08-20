@@ -84,8 +84,12 @@ public class Moment {
         this.modificationDate = modificationDate;
     }
 
-    
+    public Mood getMood() {
+        return mood;
+    }
 
-    
+    public void setMood(Mood mood) {
+        this.mood = mood;
+    }
 
 }

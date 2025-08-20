@@ -9,6 +9,7 @@ import dev.yolanda.dtos.MomentDTOResponse;
 import dev.yolanda.mappers.MomentMapper;
 import dev.yolanda.models.Emotion;
 import dev.yolanda.models.Moment;
+import dev.yolanda.models.Mood;
 import dev.yolanda.repositories.MomentRepository;
 import dev.yolanda.singletons.MomentRepositorySingleton;
 import dev.yolanda.views.MomentView;
@@ -31,7 +32,7 @@ public class MomentController {
         List<Moment> moments = repository.GetAllMoments();
 
         for (Moment moment : moments) {
-            momentsDTO.add(new MomentDTOResponse(moment.getId(), moment.getMomentTitle(), moment.getDescription(), moment.getEmotion(),moment.getDate()));
+            momentsDTO.add(new MomentDTOResponse(moment.getId(), moment.getMomentTitle(), moment.getDescription(), moment.getEmotion(),moment.getDate(), moment.getMood()));
         }
 
         MomentView.showAllMoments(momentsDTO);
@@ -48,6 +49,10 @@ public class MomentController {
     
     public List<Moment> getMomentsByDate(int month, int year) {
         return repository.filterByDate(month, year);
+    }
+
+    public List<Moment> getMomentsByMood(Mood mood) {
+        return repository.filterByMood(mood);
     }
     
 

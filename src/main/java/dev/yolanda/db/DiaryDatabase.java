@@ -7,6 +7,7 @@ import dev.yolanda.contracts.InterfaceDatabase;
 import dev.yolanda.models.Emotion;
 import dev.yolanda.models.Emotion;
 import dev.yolanda.models.Moment;
+import dev.yolanda.models.Mood;
 
 public class DiaryDatabase implements InterfaceDatabase{
 
@@ -51,6 +52,17 @@ public class DiaryDatabase implements InterfaceDatabase{
         List<Moment> filtered = new ArrayList<>();
         for (Moment m : moments) {
             if (m.getDate().getMonthValue() == month && m.getDate().getYear() == year) {
+                filtered.add(m);
+            }
+        }
+        return filtered;
+    }
+
+    @Override
+    public List<Moment> filterByMood(Mood mood) {
+        List<Moment> filtered = new ArrayList<>();
+        for (Moment m : moments) {
+            if (m.getMood() == mood) {
                 filtered.add(m);
             }
         }

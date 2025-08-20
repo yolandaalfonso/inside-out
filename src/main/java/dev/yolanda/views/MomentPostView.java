@@ -80,7 +80,7 @@ public class MomentPostView extends View{
 
         Emotion emotion = Emotion.values()[numberEmotion - 1];
 
-        MomentDTO moment = new MomentDTO(1, momentTitle, description, emotion, date);
+        MomentDTO moment = new MomentDTO(1, momentTitle, description, emotion, date, mood);
         CONTROLLER.StoreMoment(moment);
 
         System.out.println("Momento añadido con éxito.");
