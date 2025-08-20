@@ -6,6 +6,7 @@ import dev.yolanda.contracts.InterfaceDatabase;
 import dev.yolanda.db.DiaryDatabase;
 import dev.yolanda.models.Emotion;
 import dev.yolanda.models.Moment;
+import dev.yolanda.models.Mood;
 
 public class MomentRepository {
     
@@ -33,5 +34,9 @@ public class MomentRepository {
 
     public List<Moment> filterByDate(int month, int year) {
         return db.filterByDate(month, year);
+    }
+
+    public List<Moment> filterByMood(Mood mood) {
+        return db.filterByMood(mood);
     }
 }

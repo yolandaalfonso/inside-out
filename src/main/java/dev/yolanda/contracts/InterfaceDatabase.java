@@ -4,6 +4,7 @@ import java.util.List;
 
 import dev.yolanda.models.Emotion;
 import dev.yolanda.models.Moment;
+import dev.yolanda.models.Mood;
 
 public interface InterfaceDatabase {
 
@@ -12,4 +13,5 @@ public interface InterfaceDatabase {
     public void deleteMoment(int id);
     List<Moment> filterByEmotion(Emotion emotion);
     List<Moment> filterByDate(int month, int year);
+    List<Moment> filterByMood(Mood mood);
 }
