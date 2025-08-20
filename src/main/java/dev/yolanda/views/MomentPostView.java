@@ -7,6 +7,7 @@ import java.time.format.DateTimeParseException;
 import dev.yolanda.controllers.MomentController;
 import dev.yolanda.dtos.MomentDTO;
 import dev.yolanda.models.Emotion;
+import dev.yolanda.models.Mood;
 import dev.yolanda.singletons.MomentControllerSingleton;
 
 public class MomentPostView extends View{
@@ -79,6 +80,18 @@ public class MomentPostView extends View{
         SCANNER.nextLine();
 
         Emotion emotion = Emotion.values()[numberEmotion - 1];
+
+        String textMood = """
+                Seleccione si el momento ha sido bueno o malo:
+                1. Bueno
+                2. Malo
+                """;
+
+        System.out.print(textMood);
+        int numberMood = SCANNER.nextInt();
+        SCANNER.nextLine();
+
+        Mood mood = Mood.values()[numberMood - 1];
 
         MomentDTO moment = new MomentDTO(1, momentTitle, description, emotion, date, mood);
         CONTROLLER.StoreMoment(moment);

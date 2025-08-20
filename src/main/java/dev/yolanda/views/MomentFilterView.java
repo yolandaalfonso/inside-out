@@ -18,7 +18,7 @@ public class MomentFilterView extends View{
 
         if (option == 1) FilterEmotionView.filterByEmotion();
         if (option == 2) FilterDateView.filterByDate();
-        //if (option == 3) FilterMoodView.filterByMood();
+        if (option == 3) FilterMoodView.filterByMood();
 
         //CONTROLLER.deleteMoment(id);
 
