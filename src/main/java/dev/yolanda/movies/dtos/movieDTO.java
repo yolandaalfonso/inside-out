@@ -1,6 +1,10 @@
 package dev.yolanda.movies.dtos;
 
-public class movieDTO {
+import com.google.gson.annotations.SerializedName;
+
+import dev.yolanda.movies.VO.ShortInfoVO;
+
+public class MovieDTO {
     // imdbId property
     private String imdbId;
 
