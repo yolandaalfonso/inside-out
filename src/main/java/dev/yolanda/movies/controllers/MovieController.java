@@ -2,27 +2,37 @@ package dev.yolanda.movies.controllers;
 
 import java.io.IOException;
 import java.nio.file.Path;
+import java.time.LocalDate;
 import java.util.List;
 
+import dev.yolanda.models.Emotion;
+import dev.yolanda.movies.dtos.MovieDTO;
+import dev.yolanda.movies.mappers.MovieMapper;
 import dev.yolanda.movies.models.Movie;
 import dev.yolanda.movies.repositories.MovieCsvRepository;
+import dev.yolanda.movies.services.MovieService;
 
 public class MovieController {
-    private final MovieCsvRepository repo;
+    private final MovieRepositoryCSV repository;
+    private final MovieService movieService;
 
     public MovieController() {
-        this.repo = new MovieCsvRepository(Path.of("data/movies.csv"));
+        this.repository = MovieRepositorySingleton.getInstance();
+        this.movieService = new MovieService(null);
     }
 
-    public void addMovie(Movie movie) throws IOException {
-        repo.save(movie);
-    }
+    public void addMovieById(String imdbId, Emotion emotion) {
+        MovieDTO movieDTO = movieService.findMovieById(imdbId);
 
-    public List<Movie> getAll() throws IOException {
-        return repo.getAll();
-    }
+        if(movieDTO != null) {
+            LocalDate creationDate = LocalDate.now();
+            Movie movie = MovieMapper.toEntity(movieDTO, emotion, creationDate);
 
-    public List<Movie> filterByGenre(String genre) throws IOException {
-        return repo.getByGenre(genre);
+            repository.save(movie);
+            System.out.print("Película añadida con éxito!");
+        } else {
+            System.out.println("No se encontró la peli. Inténtalo de nuevo.");
+        }
+
     }
 }

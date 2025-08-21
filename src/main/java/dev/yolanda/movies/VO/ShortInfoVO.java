@@ -15,7 +15,7 @@ public class ShortInfoVO {
         return genre;
     }
 
-    public String[] releaseYear() {
+    public String[] getReleaseYear() {
         return releaseYear;
     }
 
