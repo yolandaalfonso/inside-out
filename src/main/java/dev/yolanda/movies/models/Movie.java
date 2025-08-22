@@ -8,7 +8,7 @@ import dev.yolanda.models.Emotion;
 public class Movie {
     private String imdbId;
     private String name;
-    private List<String> genres; // guardaremos en CSV separados por '|'
+    private List<String> genres;
     private Emotion emotion; 
     private List<Integer> releaseYears;
     private LocalDate createdAt;

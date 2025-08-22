@@ -4,7 +4,13 @@ import java.time.LocalDate;
 
 import org.junit.jupiter.api.Test;
 
+import dev.yolanda.models.Emotion;
+
 import java.time.LocalDate;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
+
 
 public class MomentDTOTest {
     @Test
