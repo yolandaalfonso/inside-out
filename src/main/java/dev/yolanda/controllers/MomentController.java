@@ -1,5 +1,7 @@
 package dev.yolanda.controllers;
 
+import java.io.IOException;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -10,6 +12,7 @@ import dev.yolanda.mappers.MomentMapper;
 import dev.yolanda.models.Emotion;
 import dev.yolanda.models.Moment;
 import dev.yolanda.models.Mood;
+import dev.yolanda.repositories.MomentCSVRepository;
 import dev.yolanda.repositories.MomentRepository;
 import dev.yolanda.singletons.MomentRepositorySingleton;
 import dev.yolanda.views.MomentView;
@@ -17,6 +20,7 @@ import dev.yolanda.views.MomentView;
 public class MomentController {
 
     private MomentRepository repository;
+    private final MomentCSVRepository csvService = new MomentCSVRepository();
 
     public MomentController() {
         this.repository = MomentRepositorySingleton.getInstance();
@@ -54,6 +58,22 @@ public class MomentController {
     public List<Moment> getMomentsByMood(Mood mood) {
         return repository.filterByMood(mood);
     }
+
+    public void exportAllMoments(String fileName) {
+        List <Moment> allMoments = repository.GetAllMoments();
+        MomentCSVRepository.exportMomentCSV(allMoments, fileName);
+    }
+
+    /*public void exportMomentCsv(Path path) throws Exception {
+        csvService.export(repository.GetAllMoments(), path);
+    }*/
+
+     /*public void exportMomentsCsv(Path path) throws IOException {
+        List<Moment> moments = repository.GetAllMoments();
+        csvService.export(moments, path);
+    }*/
+
+
     
 
     /*public List<MomentDTO> GetAllMoments() {

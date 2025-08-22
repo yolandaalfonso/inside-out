@@ -5,7 +5,6 @@ import java.util.List;
 
 import dev.yolanda.contracts.InterfaceDatabase;
 import dev.yolanda.models.Emotion;
-import dev.yolanda.models.Emotion;
 import dev.yolanda.models.Moment;
 import dev.yolanda.models.Mood;
 
