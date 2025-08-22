@@ -1,9 +1,6 @@
 package dev.yolanda.movies.controllers;
 
-import java.io.IOException;
-import java.nio.file.Path;
 import java.time.LocalDate;
-import java.util.List;
 
 import dev.yolanda.models.Emotion;
 import dev.yolanda.movies.dtos.MovieDTO;
@@ -11,9 +8,10 @@ import dev.yolanda.movies.mappers.MovieMapper;
 import dev.yolanda.movies.models.Movie;
 import dev.yolanda.movies.repositories.MovieCsvRepository;
 import dev.yolanda.movies.services.MovieService;
+import dev.yolanda.movies.singletons.MovieRepositorySingleton;
 
 public class MovieController {
-    private final MovieRepositoryCSV repository;
+    private final MovieCsvRepository repository;
     private final MovieService movieService;
 
     public MovieController() {

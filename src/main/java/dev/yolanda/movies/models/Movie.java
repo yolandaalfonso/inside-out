@@ -7,15 +7,15 @@ import dev.yolanda.models.Emotion;
 
 public class Movie {
     private String imdbId;
-    private String title;
+    private String name;
     private List<String> genres; // guardaremos en CSV separados por '|'
     private Emotion emotion; 
     private List<Integer> releaseYears;
     private LocalDate createdAt;
 
-    public Movie(String imdbId, String title, List<String> genres, Emotion emotion, int releaseYear) {
+    public Movie(String imdbId, String name, List<String> genres, Emotion emotion, int releaseYear) {
         this.imdbId = imdbId;
-        this.title = title;
+        this.name = name;
         this.genres = genres;
         this.emotion = emotion;
         this.releaseYears = releaseYears;
@@ -23,14 +23,14 @@ public class Movie {
     }
 
     public String getImdbId() { return imdbId; }
-    public String getTitle() { return title; }
+    public String getName() { return name; }
     public List<String> getGenres() { return genres; }
     public Emotion getEmotion() { return emotion; }
-    public List<Integer> getReleaseYears() { return releaseYears; }
+    public List<Integer> getReleaseYear() { return releaseYears; }
     public LocalDate getCreatedAt() { return createdAt; }
 
     @Override
     public String toString() {
-        return title + " (" + releaseYears + ") [" + String.join(", ", genres) + "] - " + emotion;
+        return name + " (" + releaseYears + ") [" + String.join(", ", genres) + "] - " + emotion;
     }
 }

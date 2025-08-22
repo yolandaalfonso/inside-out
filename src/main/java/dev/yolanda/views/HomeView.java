@@ -1,6 +1,8 @@
 package dev.yolanda.views;
 
 import dev.yolanda.controllers.MomentController;
+import dev.yolanda.movies.models.Movie;
+import dev.yolanda.movies.views.MovieView;
 import dev.yolanda.singletons.MomentControllerSingleton;
 
 public class HomeView extends View{
@@ -31,7 +33,7 @@ public class HomeView extends View{
         if (option == 3) MomentDeleteView.printDeleteMenu();
         if (option == 4) MomentFilterView.printFilterMenu();
         if (option == 5) MomentExportCsvView.printExportMenu();
-        //if (option == 6) MomentExportCsvView.printFilterMenu();
+        if (option == 6) MovieView.printMenu();
         if (option == 7) System.out.println("¡Hasta la próxima!!! 👋");
 
 

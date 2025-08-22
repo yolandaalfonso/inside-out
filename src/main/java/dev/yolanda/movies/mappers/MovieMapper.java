@@ -25,7 +25,7 @@ public class MovieMapper {
         } catch (NumberFormatException e) {
             // Por si el ID no es un número
         }
-        return new Movie(id, name, genresList, emotion, releaseYear, creationDate.toString());
+        return new Movie(id, name, genresList, emotion, releaseYear, createdAt.toString());
     }
     
 }

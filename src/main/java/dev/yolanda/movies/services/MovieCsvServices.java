@@ -25,7 +25,7 @@ public class MovieCsvServices {
 
         for (Movie movie : movies) {
             sb.append(escape(movie.getImdbId())).append(",");
-            sb.append(escape(movie.getTitle())).append(",");
+            sb.append(escape(movie.getName())).append(",");
             sb.append(escape(String.join("|", movie.getGenres()))).append(",");
             sb.append(movie.getEmotion().name()).append(",");
             sb.append(movie.getReleaseYear()).append(",");

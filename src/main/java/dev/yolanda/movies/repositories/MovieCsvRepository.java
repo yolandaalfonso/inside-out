@@ -17,7 +17,7 @@ import dev.yolanda.services.CsvUtils;
 public class MovieCsvRepository {
     private List<Movie> movies;
 
-    public MovieRepositoryCSV() {
+    public MovieCsvRepository() {
         this.movies = new ArrayList<>();
     }
 
@@ -40,7 +40,7 @@ public class MovieCsvRepository {
                 writer.append(",");
                 writer.append(movie.getReleaseYear());
                 writer.append(",");
-                writer.append(movie.getCreationDate());
+                writer.append(movie.getCreatedAt());
                 writer.append("\n");
             }
             System.out.println("Archivo CSV generado exitosamente en: " + filePath);
